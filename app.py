@@ -24,23 +24,23 @@ while True:
     match choice:
         case "1":
             load_csv()
-        case "2":
-            keyword = input("Enter the institution name: ")
-            search_by_institution( ,keyword)
-        case "3":
-
-        case "4":
-
-        case "5":
-
-        case "6":
-
-        case "7":
-
-        case "8":
-            break
-        case _ :
-            break
+        # case "2":
+        #     keyword = input("Enter the institution name: ")
+        #     search_by_institution( ,keyword)
+        # case "3":
+        #
+        # case "4":
+        #
+        # case "5":
+        #
+        # case "6":
+        #
+        # case "7":
+        #
+        # case "8":
+        #     break
+        # case _ :
+        #     break
 
 
 
