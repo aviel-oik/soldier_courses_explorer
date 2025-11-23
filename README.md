@@ -1,1 +1,1 @@
-"# soldier_courses_explorer" 
+# soldier_courses_explorer
