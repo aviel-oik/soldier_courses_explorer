@@ -55,10 +55,20 @@ def get_course_count_per_district(conn):
     GROUP BY district
     ORDER BY num_courses DESC;
     """
-
-
-def run_free_query(conn, sql):
-    # VERIFICATION
     cur = conn.cursor()
     cur.execute(sql)
     return cur.fetchall()
+
+
+def run_free_query(conn, sql):
+    if not sql.strip().upper().startswith("SELECT"):
+        print("JUST SELECT !!!!!")
+        return None
+    try:
+        cur = conn.cursor()
+        cur.execute(sql)
+        return cur.fetchall()
+    except Exception as e:
+        print(e)
+        return None
+

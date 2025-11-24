@@ -1,14 +1,14 @@
-import connection
+import db.connection
 import csv
 # import data
 
 def load_csv():
     row_loaded = 0
 
-    cnx = connection.get_connection()
+    cnx = db.connection.get_connection()
     cursor = cnx.cursor()
 
-    with open('C:/Users\COMPUTER\Desktop\soldier_courses_explorer\data\courses.csv', encoding="utf-8") as csvfile:
+    with open('C:\\Users\\COMPUTER\\Desktop\\soldier_courses_explorer\\data\\courses.csv', encoding="utf-8") as csvfile:
         reader = csv.reader(csvfile)
         next(reader)
 

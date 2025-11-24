@@ -1,5 +1,6 @@
 from db.load_csv import load_csv
 from db.queries import *
+from db.connection import *
 
 
 
@@ -16,7 +17,7 @@ def print_menu():
     8- EXIT 
     Choose option:  """)
 
-cnx = connection.get_connection()
+cnx = get_connection()
 cursor = cnx.cursor()
 
 while True:
@@ -24,23 +25,26 @@ while True:
     match choice:
         case "1":
             load_csv()
-        # case "2":
-        #     keyword = input("Enter the institution name: ")
-        #     search_by_institution( ,keyword)
-        # case "3":
-        #
-        # case "4":
-        #
-        # case "5":
-        #
-        # case "6":
-        #
-        # case "7":
-        #
-        # case "8":
-        #     break
-        # case _ :
-        #     break
+        case "2":
+            keyword = input("Enter the institution name: ")
+            print(search_by_institution(cnx ,keyword))
+        case "3":
+            keyword = input("Enter the course name: ")
+            print(search_by_course(cnx, keyword))
+        case "4":
+            print(get_most_common_course(cnx))
+        case "5":
+            print(get_least_common_course(cnx))
+        case "6":
+            print(get_course_count_per_district(cnx))
+        case "7":
+            query = input("Enter the SQL query: ")
+            print(run_free_query(cnx, query))
+        case "8":
+            break
+        case _ :
+            print("You need to enter a valid option, Bye !!!")
+            continue
 
 
 
